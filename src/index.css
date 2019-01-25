@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body {
+  background: rgb(109, 195, 140);
+  overflow: hidden;
+}
+
+.logo-section {
+  position: absolute;
+  top: 40vh;
+  left: 30%;
+  width: 40%;
+  text-align: center;
+}
+.logo-section > img {
+  width: 100%;
+  max-width: 200px;
+}
+
+#canvas {
+  overflow: hidden;
+}
+
+.unstyled {
+  display: block;
+  list-style: none;
+}
+.unstyled > li {
+  float: left;
+  text-decoration: none;
+  width: 50px;
+  height: 20px;
+}
+
+.unstyled > li a {
+  text-decoration: none;
+}
+
+.full-width {
+  width: 100%;
+  height: auto;
+}
+.absolute {
+  position: absolute;
+  top: 0;
+}

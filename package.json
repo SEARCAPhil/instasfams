@@ -80,7 +80,8 @@
     "mem": "1.1.0",
     "get-stream": "3.0.0",
     "invert-kv": "1.0.0",
-    "camelcase": "4.1.0"
+    "camelcase": "4.1.0",
+    "extsprintf": "1.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -99,6 +100,7 @@
     "jsqr": "^1.1.1",
     "msal": "^0.2.4",
     "navigo": "^7.1.2",
+    "quagga": "^0.12.1",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "uglifyjs-webpack-plugin": "^2.0.1",

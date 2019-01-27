@@ -3,12 +3,14 @@
   padding: 0;
 }
 html {
-  overflow: hidden;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 body {
+  position: fixed;
   background: rgb(109, 195, 140);
   overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 .logo-section {
@@ -50,3 +52,53 @@ body {
   position: absolute;
   top: 0;
 }
+
+.pull-right {
+  float: right !important;
+}
+
+#canvas2 {
+  height: 100%;
+}
+
+#canvas2 > video {
+  width: auto;
+  height: 100%;
+}
+
+/*------------------------------------------
+  Responsive Grid Media Queries - 1280, 1024, 768, 480
+   1280-1024   - desktop (default grid)
+   1024-768    - tablet landscape
+   768-480     - tablet 
+   480-less    - phone landscape & smaller
+--------------------------------------------*/
+@media all and (min-width: 1024px) { 
+  #canvas2 {
+    width: 100%;
+    height: auto;
+  }
+
+  #canvas2 > video {
+    width: 100%;
+    height: auto;
+  } 
+
+  #canvas {
+    width: 100%;
+    height: auto;
+  }
+  
+}
+ 
+@media all and (min-width: 768px) and (max-width: 1024px) { }
+ 
+@media all and (min-width: 480px) and (max-width: 768px) { 
+
+}
+ 
+@media all and (max-width: 480px) { 
+
+}
+
+  

@@ -44,23 +44,12 @@ module.exports = {
       skipWaiting: true,
       clientsClaim: true,
       runtimeCaching: [{
-        urlPattern: new RegExp('http://localhost/contacts_web'),
+        urlPattern: new RegExp('http://localhost'),
         handler: 'staleWhileRevalidate'
       },
       {
-        urlPattern: new RegExp('http://localhost/contacts_api'),
-        handler: 'networkFirst',
-        options: {
-          // Fall back to the cache after 10 seconds.
-          networkTimeoutSeconds: 10,
-          // Use a custom cache name for this route.
-          cacheName: 'my-api-cache',
-          // Configure custom cache expiration.
-          expiration: {
-            maxEntries: 5,
-            maxAgeSeconds: 60
-          }
-        }
+        urlPattern: new RegExp('https://use.fontawesome.com'),
+        handler: 'cacheFirst',
       }]
     })
 

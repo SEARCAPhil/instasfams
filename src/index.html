@@ -6,6 +6,18 @@
   <title>Page Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+  <link rel="preload" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<script src="../node_modules/quagga/dist/quagga.js"></script>
+<style>#canvas2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.logo-section {
+  z-index: 10;
+}
+
+</style>
   <script src="./index.js"></script>
 </head>
 <body>
@@ -14,6 +26,7 @@
   </center>
 
   <canvas id="canvas" height="765vh" width="1000px"></canvas>
+  <div id="canvas2"></div>
 
 </body>
 </html>

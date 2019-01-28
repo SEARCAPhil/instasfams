@@ -1,6 +1,7 @@
 export default class {
   constructor (opt) {
     this.__opt = opt
+    
   }
   
   start () {
@@ -10,22 +11,12 @@ export default class {
             type: "LiveStream",
             target: document.querySelector('#canvas2'),
             constraints: {
-                width: 480,
-                height: 320,
                 facingMode: "environment"
             },
         },
         decoder: {
             readers: [
-                "code_128_reader",
-                "ean_reader",
-                "ean_8_reader",
-                "code_39_reader",
-                "code_39_vin_reader",
-                "codabar_reader",
-                "upc_reader",
-                "upc_e_reader",
-                "i2of5_reader"
+                'code_128_reader',
             ],
             debug: {
                 showCanvas: true,
@@ -44,7 +35,7 @@ export default class {
         },
   
     }, function (err) {
-        if (err) {
+        if (err) { 
             console.log(err);
             return
         }

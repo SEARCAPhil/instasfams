@@ -6,6 +6,8 @@ const loadScannerBtns = () => {
     let btnComp = new btn.default()
     let targ = document.querySelector('#btn-main')
     let t = targ === null ? document.body.append(btnComp) : targ.replaceWith(btnComp)
+    //change position
+    btnComp.style.top = (document.body.clientHeight - parseInt(window.getComputedStyle(btnComp).height))+ 'px'
   })
 }
 

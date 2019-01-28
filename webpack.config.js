@@ -25,6 +25,9 @@ module.exports = {
     }, {
       from: 'src/assets/img/**/*.jpg',
       to: 'assets/img/[name].[ext]'
+    },{
+      from: 'src/assets/img/**/*.ico',
+      to: 'assets/img/[name].[ext]'
     }, {
       from: 'src/assets/css/**/*.css',
       to: 'assets/css/[name].[ext]'

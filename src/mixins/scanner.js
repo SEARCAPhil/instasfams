@@ -2,6 +2,7 @@ import jsQR from "jsqr"
 
 export default class {
   constructor (opt) {
+    this.__opt = opt
     this.video = document.createElement("video");
     this.canvasElement = document.querySelector("#canvas");
     this.canvas = this.canvasElement.getContext("2d");
@@ -14,7 +15,7 @@ export default class {
       inversionAttempts: "dontInvert",
     });
     if (this.code) {
-      alert('a')
+      this.__opt.callback(this.code)
     } else {
     
     }

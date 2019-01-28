@@ -1,9 +1,11 @@
 import style from './style'
-
+import Toastr from 'toastr'
 
 export default class {
   constructor () {
     this.isQR = 'qr-select'
+    this.treshold = 12
+    this.timeout = {}
     return this.render()
   }
   loadDropdown () {
@@ -11,10 +13,13 @@ export default class {
     DropdownLoader.then(loader => loader.default('device-dropdown'))
   }
 
+  loadQrScannerCallback (code) {
+    console.log(code)
+  }
   loadQrScanner () {
     const Scanner = import('../../mixins/scanner')
     const targ = this.__template.querySelector('#scan')
-
+    const __proto__ = Object.create(this)
     // scanner
     const scanBtn = document.createElement('a')
     scanBtn.id = 'scan'
@@ -22,7 +27,10 @@ export default class {
 
     
     Scanner.then(scanObj => {
-      let scan = new scanObj.default()
+      let opt = {
+        callback: this.loadQrScannerCallback.bind(__proto__)
+      }
+      let scan = new scanObj.default(opt)
       scanBtn.addEventListener('click', () => {
         scan.start()
       })
@@ -32,22 +40,70 @@ export default class {
 
   }
 
+  open (code) {
+    // TOaster
+    Toastr.options = {
+      "closeButton": false,
+      "debug": false,
+      "newestOnTop": false,
+      "progressBar": false,
+      "positionClass": "toast-top-right",
+      "preventDuplicates": false,
+      "showDuration": "300",
+      "hideDuration": "1000",
+      "timeOut": "35000",
+      "extendedTimeOut": "1000",
+      "showEasing": "swing",
+      "hideEasing": "linear",
+      "showMethod": "fadeIn",
+      "hideMethod": "fadeOut"
+    }
+
+    Toastr.options.onclick = () => {
+      window.open(`https://sfams.searcaapps.org/v2/index.php/user/login?url=fixed-assets-list?search=${code}`)
+      //window.open(`https://sfams.searcaapps.org/v2/index.php/user/login?url=/v2/fixed-assets-list?search=${code}`)
+    }
+   
+    Toastr.info('Click to open', `Property: ${code}`)
+
+  }
+
   loadBarcodeScannerCallback (result) {
-    alert(JSON.stringify(result))
+    
+    let codeCount = 0
+    let codeSum = 0
+    
+    result.codeResult.decodedCodes.forEach(res => {
+      if(res.error === undefined) return
+      codeCount++
+      codeSum+= parseFloat(res.error)
+    })
+
+    if(codeCount/codeSum > this.treshold) {
+      console.log(`parsed successfully . . . RESULT: ${result.codeResult.code} : ${codeCount/codeSum}`)
+      // prevent opening multiple tabs all at once
+      clearTimeout(this.timeout)
+      this.timeout = setTimeout(() => {
+        if(result.codeResult.code.length > 1) this.open(result.codeResult.code)
+      }, 1000)
+      
+    }
+    
+    
   }
 
   loadBarcodeScanner () {
     const Scanner = import('../../mixins/barcode')
     const targ = this.__template.querySelector('#scan')
-
+    const __proto__ = Object.create(this)
     // scanner
     const scanBtn = document.createElement('a')
     scanBtn.id = 'scan'
-    scanBtn.innerHTML = 'BAR <i class="fa fa-barcode"></i>'
+    scanBtn.innerHTML = 'SCAN<i class="fa fa-barcode"></i>'
 
     let opt = {
       targetSelector: '#canvas2',
-      callback: this.loadBarcodeScannerCallback
+      callback: this.loadBarcodeScannerCallback.bind(__proto__)
     }
 
     Scanner.then(scanObj => {
@@ -61,6 +117,7 @@ export default class {
       scan.start()
     })
 
+
    
   }
 
@@ -71,7 +128,7 @@ export default class {
       })
     })
 
-    setTimeout(() => this.loadQrScanner() , 800)
+    setTimeout(() => this.loadBarcodeScanner() , 800)
   }
   __bindListeners () {
     this.loadDropdown()

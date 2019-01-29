@@ -6,8 +6,9 @@ const loadScannerBtns = () => {
     let btnComp = new btn.default()
     let targ = document.querySelector('#btn-main')
     let t = targ === null ? document.body.append(btnComp) : targ.replaceWith(btnComp)
-    //change position
-    btnComp.style.top = (document.body.clientHeight - parseInt(window.getComputedStyle(btnComp).height))+ 'px'
+    // change position
+    btnComp.style.top = (document.body.clientHeight - parseInt(window.getComputedStyle(btnComp).height)) + 'px'
+    return t
   })
 }
 
@@ -15,7 +16,7 @@ const loadServiceWorker = () => {
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js').then(registration => {
-        console.log('SW registered: ', registration);
+        console.log('SW registered: ', registration)
       }).catch(registrationError => {
         console.log(registrationError)
       })

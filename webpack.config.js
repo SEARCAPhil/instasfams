@@ -25,7 +25,7 @@ module.exports = {
     }, {
       from: 'src/assets/img/**/*.jpg',
       to: 'assets/img/[name].[ext]'
-    },{
+    }, {
       from: 'src/assets/img/**/*.ico',
       to: 'assets/img/[name].[ext]'
     }, {
@@ -40,6 +40,14 @@ module.exports = {
     }, {
       from: 'src/**/*.css',
       to: '[name].[ext]'
+    }, {
+      from: 'node_modules/quagga/',
+      to: 'web_modules/quagga/'
+    }, {
+      from: 'node_modules/toastr/',
+      to: 'web_modules/toastr/'
+    }, {
+      from: 'src/.nojekyll'
     }]),
     new UglifyJSPlugin(),
     new workboxPlugin.GenerateSW({
@@ -52,7 +60,7 @@ module.exports = {
       },
       {
         urlPattern: new RegExp('https://use.fontawesome.com'),
-        handler: 'cacheFirst',
+        handler: 'cacheFirst'
       }]
     })
 

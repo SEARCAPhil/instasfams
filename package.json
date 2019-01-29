@@ -81,7 +81,11 @@
     "get-stream": "3.0.0",
     "invert-kv": "1.0.0",
     "camelcase": "4.1.0",
-    "extsprintf": "1.4.0"
+    "extsprintf": "1.4.0",
+    "pify": "2.3.0",
+    "globby": "6.1.0",
+    "commander": "2.19.0",
+    "fs-extra": "7.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
@@ -97,6 +101,7 @@
     "clean-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^1.0.1",
+    "gh-pages": "^2.0.1",
     "jsqr": "^1.1.1",
     "msal": "^0.2.4",
     "navigo": "^7.1.2",
@@ -112,6 +117,7 @@
   "scripts": {
     "start": "webpack-dev-server --host 0.0.0.0",
     "test": "exit 0",
-    "check": "standard --parser babel-eslint"
+    "check": "standard --parser babel-eslint",
+    "publish": "./node_modules/.bin/gh-pages"
   }
 }

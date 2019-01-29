@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 import style from './style'
 import Toastr from 'toastr'
 
@@ -25,7 +26,6 @@ export default class {
     scanBtn.id = 'scan'
     scanBtn.innerHTML = 'SCAN'
 
-    
     Scanner.then(scanObj => {
       let opt = {
         callback: this.loadQrScannerCallback.bind(__proto__)
@@ -37,59 +37,53 @@ export default class {
       // replace node to avoid multiple bidings
       targ.replaceWith(scanBtn)
     })
-
   }
 
   open (code) {
     // TOaster
     Toastr.options = {
-      "closeButton": false,
-      "debug": false,
-      "newestOnTop": false,
-      "progressBar": false,
-      "positionClass": "toast-top-right",
-      "preventDuplicates": false,
-      "showDuration": "300",
-      "hideDuration": "1000",
-      "timeOut": "35000",
-      "extendedTimeOut": "1000",
-      "showEasing": "swing",
-      "hideEasing": "linear",
-      "showMethod": "fadeIn",
-      "hideMethod": "fadeOut"
+      'closeButton': false,
+      'debug': false,
+      'newestOnTop': false,
+      'progressBar': false,
+      'positionClass': 'toast-top-right',
+      'preventDuplicates': false,
+      'showDuration': '300',
+      'hideDuration': '1000',
+      'timeOut': '35000',
+      'extendedTimeOut': '1000',
+      'showEasing': 'swing',
+      'hideEasing': 'linear',
+      'showMethod': 'fadeIn',
+      'hideMethod': 'fadeOut'
     }
 
     Toastr.options.onclick = () => {
       window.open(`https://sfams.searcaapps.org/v2/index.php/user/login?url=fixed-assets-list?search=${code}`)
-      //window.open(`https://sfams.searcaapps.org/v2/index.php/user/login?url=/v2/fixed-assets-list?search=${code}`)
+      // window.open(`https://sfams.searcaapps.org/v2/index.php/user/login?url=/v2/fixed-assets-list?search=${code}`)
     }
-   
-    Toastr.info('Click to open', `Property: ${code}`)
 
+    Toastr.info('Click to open', `Property: ${code}`)
   }
 
   loadBarcodeScannerCallback (result) {
-    
     let codeCount = 0
     let codeSum = 0
-    
+
     result.codeResult.decodedCodes.forEach(res => {
-      if(res.error === undefined) return
+      if (res.error === undefined) return
       codeCount++
-      codeSum+= parseFloat(res.error)
+      codeSum += parseFloat(res.error)
     })
 
-    if(codeCount/codeSum > this.treshold) {
-      console.log(`parsed successfully . . . RESULT: ${result.codeResult.code} : ${codeCount/codeSum}`)
+    if (codeCount / codeSum > this.treshold) {
+      console.log(`parsed successfully . . . RESULT: ${result.codeResult.code} : ${codeCount / codeSum}`)
       // prevent opening multiple tabs all at once
       clearTimeout(this.timeout)
       this.timeout = setTimeout(() => {
-        if(result.codeResult.code.length > 1) this.open(result.codeResult.code)
+        if (result.codeResult.code.length > 1) this.open(result.codeResult.code)
       }, 1000)
-      
     }
-    
-    
   }
 
   loadBarcodeScanner () {
@@ -116,19 +110,16 @@ export default class {
       // autoclick
       scan.start()
     })
-
-
-   
   }
 
-  bindScannerOptions() {
+  bindScannerOptions () {
     this.__template.querySelectorAll('.scanner-selector').forEach((el, index) => {
       el.addEventListener('click', (e) => {
         return e.target.id === this.isQR ? this.loadQrScanner() : this.loadBarcodeScanner()
       })
     })
 
-    setTimeout(() => this.loadBarcodeScanner() , 800)
+    setTimeout(() => this.loadBarcodeScanner(), 800)
   }
   __bindListeners () {
     this.loadDropdown()
@@ -163,5 +154,4 @@ export default class {
     this.__bindListeners()
     return this.__template
   }
-  
 }

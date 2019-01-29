@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+body {
+  position: fixed;
+  background: rgb(109, 195, 140);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.logo-section {
+  position: absolute;
+  top: 40vh;
+  left: 30%;
+  width: 40%;
+  text-align: center;
+}
+.logo-section > img {
+  width: 100%;
+  max-width: 200px;
+}
+
+#canvas {
+  overflow: hidden;
+}
+
+.unstyled {
+  display: block;
+  list-style: none;
+}
+.unstyled > li {
+  float: left;
+  text-decoration: none;
+  width: 50px;
+  height: 20px;
+}
+
+.unstyled > li a {
+  text-decoration: none;
+}
+
+.full-width {
+  width: 100%;
+  height: auto;
+}
+.absolute {
+  position: absolute;
+  top: 0;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+#canvas2 {
+  height: 100%;
+}
+
+#canvas2 > video {
+  width: auto;
+  height: 100%;
+}
+
+/*------------------------------------------
+  Responsive Grid Media Queries - 1280, 1024, 768, 480
+   1280-1024   - desktop (default grid)
+   1024-768    - tablet landscape
+   768-480     - tablet 
+   480-less    - phone landscape & smaller
+--------------------------------------------*/
+@media all and (min-width: 1024px) { 
+  #canvas2 {
+    width: 100%;
+    height: auto;
+  }
+
+  #canvas2 > video {
+    width: 100%;
+    height: auto;
+  } 
+
+  #canvas {
+    width: 100%;
+    height: auto;
+  }
+  
+}
+ 
+@media all and (min-width: 768px) and (max-width: 1024px) { }
+ 
+@media all and (min-width: 480px) and (max-width: 768px) { 
+
+}
+ 
+@media all and (max-width: 480px) { 
+
+}
+
+  

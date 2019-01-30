@@ -57,9 +57,17 @@ body {
   float: right !important;
 }
 
+
 #canvas2 {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
 }
+.logo-section {
+  z-index: 10;
+}
+
 
 #canvas2 > video {
   width: auto;

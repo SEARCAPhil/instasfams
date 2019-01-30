@@ -5,13 +5,10 @@ import Toastr from 'toastr'
 export default class {
   constructor () {
     this.isQR = 'qr-select'
-    this.treshold = 12
+    this.treshold = 11
+    this.scannedBarcode = {}
     this.timeout = {}
     return this.render()
-  }
-  loadDropdown () {
-    const DropdownLoader = import('../dropdown-loader')
-    DropdownLoader.then(loader => loader.default('device-dropdown'))
   }
 
   loadQrScannerCallback (code) {
@@ -59,35 +56,20 @@ export default class {
     }
 
     Toastr.options.onclick = () => {
+      // if url is detected otherwise code only
+      if (code.indexOf('http') !==-1) return window.open(code)
       window.open(`https://sfams.searcaapps.org/v2/index.php/user/login?url=fixed-assets-list?search=${code}`)
-      // window.open(`https://sfams.searcaapps.org/v2/index.php/user/login?url=/v2/fixed-assets-list?search=${code}`)
     }
 
     Toastr.info('Click to open', `Property: ${code}`)
   }
 
-  loadBarcodeScannerCallback (result) {
-    let codeCount = 0
-    let codeSum = 0
-
-    result.codeResult.decodedCodes.forEach(res => {
-      if (res.error === undefined) return
-      codeCount++
-      codeSum += parseFloat(res.error)
-    })
-
-    if (codeCount / codeSum > this.treshold) {
-      console.log(`parsed successfully . . . RESULT: ${result.codeResult.code} : ${codeCount / codeSum}`)
-      // prevent opening multiple tabs all at once
-      clearTimeout(this.timeout)
-      this.timeout = setTimeout(() => {
-        if (result.codeResult.code.length > 1) this.open(result.codeResult.code)
-      }, 1000)
-    }
+  loadBarcodeScannerCallback (result) { 
+    this.open(result.data)
   }
 
   loadBarcodeScanner () {
-    const Scanner = import('../../mixins/barcode')
+    const Scanner = import('../../mixins/barcode-sdk')
     const targ = this.__template.querySelector('#scan')
     const __proto__ = Object.create(this)
     // scanner
@@ -122,7 +104,6 @@ export default class {
     setTimeout(() => this.loadBarcodeScanner(), 800)
   }
   __bindListeners () {
-    this.loadDropdown()
     this.bindScannerOptions()
   }
 
@@ -132,23 +113,17 @@ export default class {
     this.__template.id = 'btn-main'
     this.__template.innerHTML = `
       <style>${style.toString()}</style>
-      <div class="main-btns"><a href="#">SAVE</a></div>
+      <div class="main-btns" style="padding: 10px;text-align: left;">
+        <a href="#" style="padding: 0;">
+          <small>This App is created solely for scanning SEARCA equipment.</small>
+        </a>
+      </div>
       <div class="main-btns"><a href="#" id="scan">SCAN</a></div>
       <div class="main-btns chev-up device-dropdown" data-device-dropdown="dropdown-chev">
-        <a href="#"><i class="fa fa-chevron-up"></i></a>
-        <div class="dropdown-section float-right" id="dropdown-chev">
-          <ul class="list-group list-group-flush unstyled">
-            <li class="list-group-item scanner-selector" >
-              <a href="#" class="update-btn-modal text-center">
-                <i class="fa fa-qrcode" style="font-size: 2em;" id="qr-select"></i>
-              </a>
-            </li>
-            <li class="list-group-item scanner-selector" id="barcode-select">
-              <a href="#" class="text-danger remove-btn-modal">
-                <i class="fa fa-barcode" style="font-size: 2em;"></i>
-              </a>
-            </li>
-          </ul>
+        <a href="#" style="text-decoration: none;">
+          <i class="fa fa-mobile-alt" style="font-size: 1.5em;"></i>
+          <small>v1.0</small>
+        </a>
         </div>
       </div>`
     this.__bindListeners()

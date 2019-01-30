@@ -41,9 +41,6 @@ module.exports = {
       from: 'src/**/*.css',
       to: '[name].[ext]'
     }, {
-      from: 'node_modules/quagga/',
-      to: 'web_modules/quagga/'
-    }, {
       from: 'node_modules/toastr/',
       to: 'web_modules/toastr/'
     }, {
@@ -60,6 +57,10 @@ module.exports = {
       },
       {
         urlPattern: new RegExp('https://use.fontawesome.com'),
+        handler: 'cacheFirst'
+      },
+      {
+        urlPattern: new RegExp('https://cdn.jsdelivr.net'),
         handler: 'cacheFirst'
       }]
     })

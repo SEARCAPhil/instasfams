@@ -12,20 +12,20 @@ self.__precacheManifest = [
     "url": "web_modules/toastr/tests/qunit/qunit.js"
   },
   {
-    "revision": "27caae49f060ebb06b875919e97a9589",
-    "url": "web_modules/toastr/tests/unit/toastr-tests.js"
-  },
-  {
     "revision": "befa0250f77e8e3541123e92c2a0ad76",
     "url": "web_modules/toastr/toastr-icon.png"
   },
   {
-    "revision": "e0056cdab354a2a410b5bdc526b1e2ea",
-    "url": "web_modules/toastr/toastr.scss"
+    "revision": "27caae49f060ebb06b875919e97a9589",
+    "url": "web_modules/toastr/tests/unit/toastr-tests.js"
   },
   {
     "revision": "789c0178fa0cafa4ca54d60d52f5d55b",
     "url": "web_modules/toastr/toastr.less"
+  },
+  {
+    "revision": "e0056cdab354a2a410b5bdc526b1e2ea",
+    "url": "web_modules/toastr/toastr.scss"
   },
   {
     "revision": "fe212318eec716746cd584fd41dea649",
@@ -75,36 +75,36 @@ self.__precacheManifest = [
     "url": "assets/img/pwa-192x192.png"
   },
   {
-    "revision": "87073e010efa05fa0d62e2ede2cbcbaa",
-    "url": "assets/img/fav.ico"
-  },
-  {
     "revision": "0d8ae2adb3afc399b4da9b9bea74623e",
     "url": "assets/img/instasfams-logo.png"
+  },
+  {
+    "revision": "87073e010efa05fa0d62e2ede2cbcbaa",
+    "url": "assets/img/fav.ico"
   },
   {
     "revision": "356886e85be28b2b69de989c5d20f69e",
     "url": "assets/img/pwa-512x512.png"
   },
   {
+    "revision": "7ef1d8116abfd2136154d4198e07dac4",
+    "url": "web_modules/toastr/.gitattributes"
+  },
+  {
     "revision": "1f1cf19e18b2cadf2ab1c1be07c954eb",
     "url": "web_modules/toastr/.jscsrc"
+  },
+  {
+    "revision": "a34386042496a8059afa2a37c8e08540",
+    "url": "web_modules/toastr/.travis.yml"
   },
   {
     "revision": "508688725726578e963e3821bd83fdc3",
     "url": "web_modules/toastr/.jshintrc"
   },
   {
-    "revision": "7ef1d8116abfd2136154d4198e07dac4",
-    "url": "web_modules/toastr/.gitattributes"
-  },
-  {
     "revision": "3deb8a8c388ff8a0c54eaf3de901a3d0",
     "url": "web_modules/toastr/.npmignore"
-  },
-  {
-    "revision": "a34386042496a8059afa2a37c8e08540",
-    "url": "web_modules/toastr/.travis.yml"
   },
   {
     "revision": "6dd68d17e33a0641e9d576fd0e7b2827",
@@ -127,40 +127,40 @@ self.__precacheManifest = [
     "url": "web_modules/toastr/CHANGELOG.md"
   },
   {
-    "revision": "207f67872d7e9302b3b36fc66c34462d",
-    "url": "web_modules/toastr/nuget/content/content/toastr.css"
+    "revision": "722719c6ae762d8edc5d6359808b01ec",
+    "url": "web_modules/toastr/gulpfile.js"
   },
   {
     "revision": "ece6dacbb5c496bccdaffa202fc918c6",
     "url": "web_modules/toastr/nuget/content/content/toastr.less"
   },
   {
-    "revision": "722719c6ae762d8edc5d6359808b01ec",
-    "url": "web_modules/toastr/gulpfile.js"
-  },
-  {
     "revision": "7ddc0ff9437d0e9caf5364931a5de921",
     "url": "web_modules/toastr/nuget/content/content/toastr.min.css"
   },
   {
-    "revision": "e0e41e6757d6653b636ad5e9bb60aee5",
-    "url": "web_modules/toastr/nuget/toastr.1.0.0.nupkg"
-  },
-  {
-    "revision": "d96f460350fd7beb5e2ecf934897a695",
-    "url": "web_modules/toastr/nuget/content/scripts/toastr.min.js"
+    "revision": "207f67872d7e9302b3b36fc66c34462d",
+    "url": "web_modules/toastr/nuget/content/content/toastr.css"
   },
   {
     "revision": "27f1804a9ef5517a5b1456ba40daec41",
     "url": "web_modules/toastr/nuget/content/content/toastr.scss"
   },
   {
-    "revision": "876a618e6f598e1b48b218b6e4e22293",
-    "url": "web_modules/toastr/nuget/toastr.1.0.1.nuspec"
+    "revision": "d96f460350fd7beb5e2ecf934897a695",
+    "url": "web_modules/toastr/nuget/content/scripts/toastr.min.js"
   },
   {
     "revision": "8d428b6d24370842402c135b86a96942",
     "url": "web_modules/toastr/nuget/toastr.1.0.0.nuspec"
+  },
+  {
+    "revision": "876a618e6f598e1b48b218b6e4e22293",
+    "url": "web_modules/toastr/nuget/toastr.1.0.1.nuspec"
+  },
+  {
+    "revision": "e0e41e6757d6653b636ad5e9bb60aee5",
+    "url": "web_modules/toastr/nuget/toastr.1.0.0.nupkg"
   },
   {
     "revision": "89224dbc1ff5c003c7d1b387b209c39e",
@@ -171,16 +171,16 @@ self.__precacheManifest = [
     "url": "web_modules/toastr/nuget/toastr.1.0.1.nupkg"
   },
   {
+    "revision": "fc1c67fe2c73497bfefb969983027d19",
+    "url": "web_modules/toastr/nuget/toastr.1.0.3.nuspec"
+  },
+  {
     "revision": "37793e98a105bffbaae4d3be501a2317",
     "url": "web_modules/toastr/nuget/toastr.1.0.2.nupkg"
   },
   {
     "revision": "bcebe839708935be6131f97abc66554b",
     "url": "web_modules/toastr/nuget/toastr.1.0.3.nupkg"
-  },
-  {
-    "revision": "fc1c67fe2c73497bfefb969983027d19",
-    "url": "web_modules/toastr/nuget/toastr.1.0.3.nuspec"
   },
   {
     "revision": "7dae8a2c6f733e3f3bcad4c9e3439cc3",
@@ -191,20 +191,16 @@ self.__precacheManifest = [
     "url": "web_modules/toastr/nuget/toastr.2.0.3.nupkg"
   },
   {
-    "revision": "2213cbb0738f0fc8b70a098670cb16a4",
-    "url": "web_modules/toastr/nuget/toastr.1.1.1.nupkg"
-  },
-  {
     "revision": "31dbc4f3e23955bf22bf82aab73f505d",
     "url": "web_modules/toastr/nuget/toastr.1.1.1.nuspec"
   },
   {
-    "revision": "3fe51f8dd9e24a66ba045a99e254b169",
-    "url": "web_modules/toastr/nuget/toastr.1.1.2.nupkg"
+    "revision": "2213cbb0738f0fc8b70a098670cb16a4",
+    "url": "web_modules/toastr/nuget/toastr.1.1.1.nupkg"
   },
   {
-    "revision": "2ef6bb1dbfc1bf1bb08485a07ee13d0e",
-    "url": "web_modules/toastr/nuget/toastr.1.1.4.1.nuspec"
+    "revision": "3fe51f8dd9e24a66ba045a99e254b169",
+    "url": "web_modules/toastr/nuget/toastr.1.1.2.nupkg"
   },
   {
     "revision": "cb2ab02153736a13815a323b2a230423",
@@ -215,6 +211,10 @@ self.__precacheManifest = [
     "url": "web_modules/toastr/nuget/toastr.1.1.4.2.nuspec"
   },
   {
+    "revision": "2ef6bb1dbfc1bf1bb08485a07ee13d0e",
+    "url": "web_modules/toastr/nuget/toastr.1.1.4.1.nuspec"
+  },
+  {
     "revision": "e1e2bf7171ce4da94a5912e456abfc67",
     "url": "index.html"
   },
@@ -223,28 +223,28 @@ self.__precacheManifest = [
     "url": "web_modules/toastr/nuget/toastr.1.1.5.nuspec"
   },
   {
-    "revision": "3ac54e5cafe41920c964298df928c545",
-    "url": "web_modules/toastr/nuget/toastr.1.2.0.nuspec"
+    "revision": "3a9bd23f36e7cff0613e85a3bf2712a5",
+    "url": "web_modules/toastr/nuget/toastr.1.2.1.nuspec"
   },
   {
     "revision": "e9636fa00402552b4cf814fb144eece0",
     "url": "web_modules/toastr/nuget/toastr.1.2.2.nuspec"
   },
   {
-    "revision": "3a9bd23f36e7cff0613e85a3bf2712a5",
-    "url": "web_modules/toastr/nuget/toastr.1.2.1.nuspec"
+    "revision": "3ac54e5cafe41920c964298df928c545",
+    "url": "web_modules/toastr/nuget/toastr.1.2.0.nuspec"
   },
   {
     "revision": "21f46147fbc002195247aab9895263f4",
     "url": "web_modules/toastr/nuget/toastr.1.3.0.nuspec"
   },
   {
-    "revision": "0e1b31b3f86800af098d1fb0a30206dd",
-    "url": "web_modules/toastr/nuget/toastr.1.3.1.nuspec"
-  },
-  {
     "revision": "4f377b0f31242a7a9e636b12c64dcda4",
     "url": "web_modules/toastr/nuget/toastr.2.0.0-rc1.nuspec"
+  },
+  {
+    "revision": "0e1b31b3f86800af098d1fb0a30206dd",
+    "url": "web_modules/toastr/nuget/toastr.1.3.1.nuspec"
   },
   {
     "revision": "d5169fbf19e392455418b6bf27b1c3ed",
@@ -255,11 +255,11 @@ self.__precacheManifest = [
     "url": "web_modules/toastr/nuget/toastr.2.0.2.nuspec"
   },
   {
-    "url": "9158adbdfdac1b832078.module.js"
-  },
-  {
     "revision": "fc336f3703aa7740db5af8f0ac8311a9",
     "url": "web_modules/toastr/nuget/toastr.2.0.3.nuspec"
+  },
+  {
+    "url": "9158adbdfdac1b832078.module.js"
   },
   {
     "revision": "32c6d412a0e8b4fb9b0d20c89716dc45",
@@ -272,7 +272,7 @@ self.__precacheManifest = [
     "url": "b0d2a857ae677b1a03fe.module.js"
   },
   {
-    "url": "e2fa152145d97f7f685d.module.js"
+    "url": "d310a2fa86f44757bda3.module.js"
   },
   {
     "url": "ecc632098a6ba7363aa3.module.js"
@@ -282,8 +282,8 @@ self.__precacheManifest = [
     "url": "web_modules/toastr/nuget/toastr.2.0.2.nupkg"
   },
   {
-    "revision": "d26e133b684b7e3d154ba7f935da162f",
-    "url": "web_modules/toastr/nuget/toastr.2.0.1.nupkg"
+    "revision": "13722f02cb277fe1cfb8df86752adfa6",
+    "url": "web_modules/toastr/nuget/toastr.2.0.0-rc1.nupkg"
   },
   {
     "revision": "42dc4386eeb78c365590804faedac762",
@@ -302,24 +302,20 @@ self.__precacheManifest = [
     "url": "web_modules/toastr/nuget/toastr.1.1.4.1.nupkg"
   },
   {
-    "revision": "51168bf809df74482fc04dc8820c8678",
-    "url": "web_modules/toastr/nuget/toastr.1.1.5.nupkg"
-  },
-  {
-    "revision": "c4a753df23e282e05c46bc752c9c74da",
-    "url": "web_modules/toastr/nuget/toastr.1.1.4.nupkg"
+    "revision": "78bc479a96133f5a7ef9cc2b329a607e",
+    "url": "web_modules/toastr/nuget/content/scripts/toastr.js"
   },
   {
     "revision": "5c693dc117e6eaf3fab10f586688ecc1",
     "url": "web_modules/toastr/nuget/toastr.1.1.4.2.nupkg"
   },
   {
-    "revision": "78bc479a96133f5a7ef9cc2b329a607e",
-    "url": "web_modules/toastr/nuget/content/scripts/toastr.js"
+    "revision": "c4a753df23e282e05c46bc752c9c74da",
+    "url": "web_modules/toastr/nuget/toastr.1.1.4.nupkg"
   },
   {
-    "revision": "870d7bb77ef2962ae2a73d58021b8c87",
-    "url": "web_modules/toastr/nuget/toastr.1.2.0.nupkg"
+    "revision": "51168bf809df74482fc04dc8820c8678",
+    "url": "web_modules/toastr/nuget/toastr.1.1.5.nupkg"
   },
   {
     "revision": "18d5ab3c7e1c744cde7945f33b3aae78",
@@ -330,6 +326,10 @@ self.__precacheManifest = [
     "url": "web_modules/toastr/nuget/toastr.1.2.2.nupkg"
   },
   {
+    "revision": "870d7bb77ef2962ae2a73d58021b8c87",
+    "url": "web_modules/toastr/nuget/toastr.1.2.0.nupkg"
+  },
+  {
     "revision": "4e7dc0c628bd95c2b4a206c05087cce5",
     "url": "web_modules/toastr/nuget/toastr.1.3.0.nupkg"
   },
@@ -338,8 +338,8 @@ self.__precacheManifest = [
     "url": "web_modules/toastr/nuget/toastr.1.3.1.nupkg"
   },
   {
-    "revision": "13722f02cb277fe1cfb8df86752adfa6",
-    "url": "web_modules/toastr/nuget/toastr.2.0.0-rc1.nupkg"
+    "revision": "d26e133b684b7e3d154ba7f935da162f",
+    "url": "web_modules/toastr/nuget/toastr.2.0.1.nupkg"
   },
   {
     "revision": "9e0ac5bc29ed72211d2e",
@@ -354,7 +354,7 @@ self.__precacheManifest = [
     "url": "./mixins/barcode-sdk.js"
   },
   {
-    "revision": "c104e9180deec36385fd",
+    "revision": "f7db86d342adafce71a0",
     "url": "./index.js"
   },
   {
@@ -366,7 +366,7 @@ self.__precacheManifest = [
     "url": "./components/dropdown-loader/index.js"
   },
   {
-    "revision": "185211c40f7882bdc79b",
+    "revision": "e9479fa7e84cb44c38ed",
     "url": "./components/button-groups/index.js"
   }
 ];

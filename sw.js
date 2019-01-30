@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.de00600119c636c8152a5999238e9d37.js"
+  "precache-manifest.ee50bb032abbf6672c576d9ac436c65e.js"
 );
 
 workbox.skipWaiting();
@@ -31,3 +31,4 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerRoute(/http:\/\/localhost/, workbox.strategies.staleWhileRevalidate(), 'GET');
 workbox.routing.registerRoute(/https:\/\/use.fontawesome.com/, workbox.strategies.cacheFirst(), 'GET');
+workbox.routing.registerRoute(/https:\/\/cdn.jsdelivr.net/, workbox.strategies.cacheFirst(), 'GET');

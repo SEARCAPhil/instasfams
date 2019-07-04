@@ -25,6 +25,13 @@ const loadServiceWorker = () => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  /*loadScannerBtns()
+  loadServiceWorker()*/
+})
+
+const deviceReady = () => {
   loadScannerBtns()
   loadServiceWorker()
-})
+}
+
+document.addEventListener('deviceready', deviceReady, false);

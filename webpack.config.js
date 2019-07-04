@@ -16,13 +16,21 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['www']),
     new CopyWebpackPlugin([{
-      from: 'src/**/*.html',
-      to: '[name].[ext]'
+      context: './src/',
+      from: '**/*.html',
+      toType: 'dir' 
     }]),
     new CopyWebpackPlugin([{
-      from: 'src/assets/img/**/*.png',
-      to: 'assets/img/[name].[ext]'
-    }, {
+      context: './src/',
+      from: '**/*.css',
+      toType: 'dir'
+    }]),
+    new CopyWebpackPlugin([{
+      context: './src/',
+      from: '**/*.png',
+      toType: 'dir'
+    }]),
+    new CopyWebpackPlugin([{
       from: 'src/assets/img/**/*.jpg',
       to: 'assets/img/[name].[ext]'
     }, {
